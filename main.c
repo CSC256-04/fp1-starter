@@ -81,9 +81,7 @@ int main(int argc, char **argv) {
 
         } else if (strcmp(argv[1], "status") == 0) {
             return gatorgit_status();
-        } else if (strcmp(argv[1], "log") == 0) {
-            return gatorgit_log();
-        } else {
+        }  else {
             fprintf(stderr, "ERROR: Unknown command \"%s\"\n", argv[1]);
             return 1;
         }

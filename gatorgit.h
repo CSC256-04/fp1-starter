@@ -3,7 +3,6 @@ int gatorgit_add(const char* filename);
 int gatorgit_rm(const char* filename);
 int gatorgit_commit(const char* message);
 int gatorgit_status();
-int gatorgit_log();
 
 // Number of bytes in a commit id
 #define COMMIT_ID_BYTES 40

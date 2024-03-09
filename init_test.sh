@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "Running Test cases"
 # Step 0: Remove .gatorgit directory if it exists
 if [ -d ".gatorgit" ]; then
     rm -r .gatorgit
@@ -28,7 +28,15 @@ else
     echo "[FAIL] ADD TEST"
 fi
 
-# Step 4: RM Test
+# Step 4: STATUS Test
+
+if [ "$(./gatorgit status | sed -n '3p' | sed 's/^[[:space:]]*//')" = "gatorgit.c" ]; then
+    echo "[OK] STATUS TEST"
+else
+    echo "[FAIL] STATUS TEST"
+fi
+
+# Step 5: RM Test
 ./gatorgit rm gatorgit.c > /dev/null 2>&1
 if ! grep -q "gatorgit.c" .gatorgit/.index; then
     echo "[OK] RM TEST"
@@ -36,7 +44,7 @@ else
     echo "[FAIL] RM TEST"
 fi
 
-# Step 5: COMMIT Test
+# Step 6: COMMIT Test
 ./gatorgit add gatorgit.c > /dev/null 2>&1
 ./gatorgit commit -m "GOLDEN GATOR! init" > /dev/null 2>&1
 latestId=$(head -n 1 .gatorgit/.prev)
@@ -44,14 +52,6 @@ if [ -f ".gatorgit/$latestId/.prev" ] && [ -f ".gatorgit/$latestId/.index" ] && 
     echo "[OK] COMMIT TEST"
 else
     echo "[FAIL] COMMIT TEST"
-fi
-
-# Step 6: LOG Test
-latestId=$(head -n 1 .gatorgit/.prev)
-if [ "$(./gatorgit log | grep -v "$latestId" | sed -n '2p' | sed 's/^[[:space:]]*//')" = "$(cat .gatorgit/$latestId/.msg)" ]; then
-    echo "[OK] LOG TEST"
-else
-    echo "[FAIL] LOG TEST"
 fi
 
 # Remove .gatorgit directory and file gatorgit

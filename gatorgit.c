@@ -98,6 +98,7 @@ int gatorgit_rm(const char* filename) {
   
   /* TODO: Your code here */
 
+  return 0;
   
 }
 
@@ -111,6 +112,7 @@ const char* go_gator = "GOLDEN GATOR!";
 
 int is_commit_msg_ok(const char* msg) {
   /* TODO: Your code here  */
+  return 0;
 }
 
 void next_commit_id(char* commit_id) {
@@ -128,20 +130,11 @@ int gatorgit_commit(const char* msg) {
   char file_name[FILENAME_SIZE];
   char line[FILENAME_SIZE];
 
-  /* YOUR CODE HERE */
+  
   return 0;
 }
 
-/* gatorgit log
- *
- * See "Step 4" in the homework 1 spec.
- *
- */
-
-int gatorgit_log() {
-    char commit_id[COMMIT_ID_SIZE];
-  char file_name[FILENAME_SIZE];
-  char msg[MSG_SIZE];
+int gatorgit_status() {
   /* YOUR CODE HERE */
 
   return 0;
