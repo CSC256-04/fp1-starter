@@ -5,6 +5,18 @@
 1. Learn more about git by building a simpler version, called gatorgit
 2. Write a substantial C program
 
+**Let me remind you of the general expectations for all projects:** 
+- All projects are done in C.
+- Code must be neat, with proper and consistent indentation and well documented. 
+- Keep line to around 80 characters per line, and not line greater than 100 characters.
+- Comments must describe the logic and reason for the code and not repeat the code.  
+- Variables must have meaningful names and be in a consistent format (I do not care if you use camelCase or under_scores in variables but be consistent.
+- You must use `make` to compile the program.
+- In addition, each file must have the standard header as defined below.
+- All source files  must be in the main branch of the github.
+
+This is an INDIVIDUAL assignment.  You can (and should) work in groups to research how to do the assignment, but each person should code their own version and make their own submission.
+
 # What is gatorgit?
 
 git is a great tool for managing source code and other files. However, even great tools can be used for evil; what if someone uses it to create git commits with hideous messages. So in this homework, you will be developing your own version of git, which will put an end to such behavior by requiring every commit message to contain the words "GOLDEN GATOR!". ;-)
