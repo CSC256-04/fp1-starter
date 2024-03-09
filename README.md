@@ -5,8 +5,7 @@
 1. Learn more about git by building a simpler version, called gatorgit
 2. Write a substantial C program
 
-**Let me remind you of the general expectations for all projects:** 
-- All projects are done in C.
+**Let me remind you of the general expectations for this project:** 
 - Code must be neat, with proper and consistent indentation and well documented. 
 - Keep line to around 80 characters per line, and not line greater than 100 characters.
 - Comments must describe the logic and reason for the code and not repeat the code.  
