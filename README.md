@@ -177,8 +177,7 @@ Step 3: The commit command
 Functionality:
 The commit command involves a couple of steps:
 
-First, check whether the commit string contains "GOLDEN GATOR!". If not, display an error message. Read the ID of the previous last commit from .gatorgit/.prev. Generate the next ID (newid) in such a way that: All characters of the id are either 'c','s','c',2, 5 or c
-Generating 100 IDs in a row will generate 100 IDs that are all unique (Hint: you can do this in such a way that you go through all possible IDs before you repeat yourself. Some of the ideas from the number representation class may help you!)
+First, check whether the commit string contains "GOLDEN GATOR!". If not, display an error message. Read the ID of the previous last commit from .gatorgit/.prev. Generate the next ID (newid) in such a way that: All characters of the id are either 'c','s','c',2, 5 or 6. Generating 100 IDs in a row will generate 100 IDs that are all unique (Hint: you can do this in such a way that you go through all possible IDs before you repeat yourself. Some of the ideas from the number representation class may help you!)
 Generate a new directory .gatorgit/<newid> and copy .gatorgit/.index, .gatorgit/.prev and all tracked files into the directory.
 Store the commit message (<msg>) into .gatorgit/<newid>/.msg
 Write the new ID into .gatorgit/.prev.
@@ -202,7 +201,7 @@ If the commit message does contain the string "GOLDEN GATOR!", then the function
 There are two steps required to submit hw1. Failure to perform both steps will result in loss of credit:
 
 1. First, you must submit using using a zip file -  create a zip file and submit it on Canvas.
-                                            # your git repo, should contain a directory called fp1 with your soln
+                                          
 
 2. Additionally, you must submit hw1 to your GitHub repository. To do so, follow these instructions:
 
