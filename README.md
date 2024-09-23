@@ -1,4 +1,4 @@
-# Welcome to the first part of your Final Project for CSC256-04
+# Welcome to the first project for CSC256-04
 
 # Goals:
 
@@ -14,7 +14,7 @@
 - In addition, each file must have the standard header as defined below.
 - All source files  must be in the main branch of the github.
 
-This is an INDIVIDUAL assignment.  You can (and should) work in groups to research how to do the assignment, but each person should code their own version and make their own submission.
+This is a GROUP assignment.  You can (and should) work in groups to research how to do the assignment, but each person should code their own version and make their own submission.
 
 # What is gatorgit?
 
@@ -25,9 +25,18 @@ At its core, gatorgit is essentially a simpler version of git. gatorgit can trac
 # Key differences between gatorgit and git:
 1. The only supported commands are init, add, rm, commit and status. For each of them, only the most basic command line options are supported.
 gatorgit does not track diffs between files. Instead, each time you make a commit, it simply copies all files that are being tracked into the .gatorgit/<ID> directory (where <ID> is the commit ID). 
-2. Commit IDs are not based on cryptographic hash functions, but instead are a fixed sequence of 40-character strings that only contain 'c', 's', 'c', '2', '5' and '6' (why we chose those characters is left as an exercise to the reader). Any commits with a commit message that does not contain "GOLDEN GATOR!" (with exactly this capitalization and spelling) will be rejected with an error message. 
-3. No user, date or other additional information is tracked by gatorgit. It does not allow to track subdirectories.
-4. The rm command only causes gatorgit to stop tracking a file, but does not delete it from the file system.
+2. Commit IDs are not based on cryptographic hash functions, but instead are a fixed sequence of 40-character strings that only contain 'c', 's', '2', '5' and '6' (why we chose those characters is left as an exercise to the reader). Any commits with a commit message that does not contain "GOLDEN GATOR!" (with exactly this capitalization and spelling) will be rejected with an error message.
+```
+Example Commit IDs:
+
+First commit ID: cccccccccccccccccccccccccccccccccccccccc
+Second commit ID: cccccccccccccccccccccccccccccccccccccccs
+Third commit ID: cccccccccccccccccccccccccccccccccccccccc2
+
+... and so on.
+```
+4. No user, date or other additional information is tracked by gatorgit. It does not allow to track subdirectories.
+5. The rm command only causes gatorgit to stop tracking a file, but does not delete it from the file system.
 
 
 # Files:
@@ -86,7 +95,7 @@ The last two functions should only be used together. Specifically, don't try to 
 While these functions perform some basic checks to prevent you from accidentally overwriting important files, be careful whenever you call any function that modifies the file system. There is always a risk of unintentionally deleting or overwriting files, especially when working on your own machine!
 
 # Setup:
-For this assignment, we will utilize Github Codespaces. Codespaces is a paid service, but we will access it through the Github Student Developer Pack.
+For this assignment, you can have your own development environment for use Github Codespaces. Codespaces is a paid service, but you can access it through the Github Student Developer Pack for free.
 
 1. If you haven't already, sign up for the [Github Student Developer Pack](https://education.github.com/pack).
 2. Navigate to the Github repository designated for this assignment and locate the green "Code" button.
@@ -188,7 +197,7 @@ Step 3: The commit command
 Functionality:
 The commit command involves a couple of steps:
 
-First, check whether the commit string contains "GOLDEN GATOR!". If not, display an error message. Read the ID of the previous last commit from .gatorgit/.prev. Generate the next ID (newid) in such a way that: All characters of the id are either 'c','s','c',2, 5 or 6. Generating 100 IDs in a row will generate 100 IDs that are all unique (Hint: you can do this in such a way that you go through all possible IDs before you repeat yourself. Some of the ideas from the number representation class may help you!)
+First, check whether the commit string contains "GOLDEN GATOR!". If not, display an error message. Read the ID of the previous last commit from .gatorgit/.prev. Generate the next ID (newid) in such a way that: All characters of the id are either 'c','s','2', '5' or '6'. Generating 100 IDs in a row will generate 100 IDs that are all unique (Hint: you can do this in such a way that you go through all possible IDs before you repeat yourself. Some of the ideas from the number representation class may help you!)
 Generate a new directory .gatorgit/<newid> and copy .gatorgit/.index, .gatorgit/.prev and all tracked files into the directory.
 Store the commit message (<msg>) into .gatorgit/<newid>/.msg
 Write the new ID into .gatorgit/.prev.
@@ -217,16 +226,11 @@ There are two steps required to submit hw1. Failure to perform both steps will r
 2. Additionally, you must submit hw1 to your GitHub repository. To do so, follow these instructions:
 
 ```
-$ cd ~/fp1-starter                # your git repo, should contain a directory called hw1 with your soln
 $ git add -u                      # should add all modified files in hw1 directory (must include gatorgit.c)
 $ git commit -m "FP 1 submission"
 $ git tag -f "hw1"                # The tag MUST be "hw1". Failure to do so will result in loss of credit.
 $ git push origin master --tags
 ```
-Note Do not change any of the settings of the virtual machine.
-
-
-
 
 
 
